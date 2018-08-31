@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "838967571611",
+    "firebase_url": "https://osmanyhallmanagement.firebaseio.com",
+    "project_id": "osmanyhallmanagement",
+    "storage_bucket": "osmanyhallmanagement.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838967571611:android:2929eac913336aca",
+        "android_client_info": {
+          "package_name": "com.example.porag.osmanyhallmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838967571611-9ldhhpmn0dcpela9mcc3iv41fbe7htqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.porag.osmanyhallmanagement",
+            "certificate_hash": "63ff32d97f3161a2d314aeec79a25f5797f85a25"
+          }
+        },
+        {
+          "client_id": "838967571611-pen34qjladpvqhukkq96pq22f27ilvgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSCi2-pnbSMPLCF_8FnUBsYHQebc3OT1Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838967571611-pen34qjladpvqhukkq96pq22f27ilvgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
