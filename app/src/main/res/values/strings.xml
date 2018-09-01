@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Osmany Hall Management</string>
+    <string name="Open">Open Navigation Drawer</string>
+    <string name="Close">Close Navigation Drawer</string>
 </resources>

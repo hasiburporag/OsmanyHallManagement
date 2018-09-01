@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    >
+
+    <item android:id="@+id/profile"
+        android:icon="@drawable/user"
+        android:title="Profile"
+        />
+    <item android:id="@+id/notifications"
+        android:icon="@drawable/notification"
+        android:title="Notifications"/>
+    <item android:id="@+id/Sign_Out"
+        android:icon="@drawable/signout"
+        android:title="Sign Out"/>
+
+</menu>
