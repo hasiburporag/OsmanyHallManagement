@@ -1,5 +1,6 @@
 package com.example.porag.osmanyhallmanagement;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Query usrqry;
     String userid,password;
     Users user;
+    private SkipActivity session;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -36,15 +39,20 @@ public class MainActivity extends AppCompatActivity {
         UserID=findViewById(R.id.input_email);
         Password=findViewById(R.id.input_password);
         LogIn=findViewById(R.id.btn_login);
-
+        session=new SkipActivity(this);
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Logging In");
         db=FirebaseDatabase.getInstance();
         myref=db.getReference();
         users=myref.child("Users");
-
-
+        if(!session.getusename().isEmpty())
+        {
+            updateUI();
+        }
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
                 userid=UserID.getText().toString();
                 password=Password.getText().toString();
                 usrqry=users.orderByChild("id").equalTo(userid);
@@ -57,16 +65,19 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if(user==null)
                         {
+                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(),"Invalid Username/Password",Toast.LENGTH_LONG).show();
                         }
                         else
                         {
                             if(user.getPassword().compareTo(password)==0)
                             {
+                                session.setusename(userid);
                                 updateUI();
                             }
                             else
                             {
+                                progressDialog.dismiss();
                                 Toast.makeText(getApplicationContext(),"Invalid Password",Toast.LENGTH_LONG).show();
 
                             }
@@ -74,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
+                        progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Invalid Username/Password",Toast.LENGTH_LONG).show();
                     }
                 });
@@ -87,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void updateUI() {
-        Toast.makeText(getApplicationContext(),"Successfull Login",Toast.LENGTH_LONG).show();
+        progressDialog.dismiss();
+       // Toast.makeText(getApplicationContext(),"Successfull Login",Toast.LENGTH_LONG).show();
         Intent i=new Intent(getApplicationContext(),StudentProfile.class);
         startActivity(i);
 

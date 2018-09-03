@@ -1,5 +1,7 @@
 package com.example.porag.osmanyhallmanagement;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -14,16 +16,22 @@ public class StudentProfile extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
+    private SkipActivity session;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Logging Out");
         dl = (DrawerLayout) findViewById(R.id.activity_student_profile);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
-
+        session=new SkipActivity(this);
         dl.addDrawerListener(t);
         t.syncState();
+
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -35,14 +43,26 @@ public class StudentProfile extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.profile:
-                        Toast.makeText(StudentProfile.this, "My Account", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentProfile.this, "Profile", Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.notifications:
-                        Toast.makeText(StudentProfile.this, "Settings", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentProfile.this, "Notifications", Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.Sign_Out:
-                        Toast.makeText(StudentProfile.this, "My Cart", Toast.LENGTH_SHORT).show();
+                        progressDialog.show();
+                        session.clearAll();
+                        Intent logout=new Intent(getApplicationContext(),MainActivity.class);
+                        progressDialog.dismiss();
+                        startActivity(logout);
+                        break;
+                    case R.id.contact:
+                        Toast.makeText(StudentProfile.this, "Contact Us", Toast.LENGTH_SHORT).show();
+                        break;
+
                     default:
-                        return true;
+
                 }
+                return true;
             }
         });
     }
