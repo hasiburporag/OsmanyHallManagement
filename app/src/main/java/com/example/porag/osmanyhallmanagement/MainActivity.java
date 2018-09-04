@@ -6,6 +6,7 @@ import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       // Intent demo=new Intent(getApplicationContext(),SignUp.class);
+       // startActivity(demo);
         UserID=findViewById(R.id.input_email);
         Password=findViewById(R.id.input_password);
         LogIn=findViewById(R.id.btn_login);
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 progressDialog.show();
                 userid=UserID.getText().toString();
                 password=Password.getText().toString();
@@ -105,4 +109,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
 
     }
+
 }

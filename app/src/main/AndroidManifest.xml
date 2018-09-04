@@ -21,9 +21,11 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".StudentProfile"
+        <activity
+            android:name=".StudentProfile"
             android:label="Dashboard"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".Profile"></activity>
     </application>
 
 </manifest>

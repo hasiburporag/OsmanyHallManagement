@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -43,7 +44,8 @@ public class StudentProfile extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.profile:
-                        Toast.makeText(StudentProfile.this, "Profile", Toast.LENGTH_SHORT).show();
+                        Intent profile=new Intent(getApplicationContext(),Profile.class);
+                        startActivity(profile);
                         break;
                     case R.id.notifications:
                         Toast.makeText(StudentProfile.this, "Notifications", Toast.LENGTH_SHORT).show();
@@ -73,5 +75,19 @@ public class StudentProfile extends AppCompatActivity {
             return true;
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        switch(keyCode)
+        {
+            case KeyEvent.KEYCODE_BACK:
+
+                moveTaskToBack(true);
+
+                return true;
+        }
+        return false;
     }
 }

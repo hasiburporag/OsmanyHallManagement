@@ -9,13 +9,14 @@ public class Users {
     String position;
     String dob;
     String password;
+    String roll;
 
     public Users()
     {
 
     }
 
-    public Users(String id, String name, String hallid, String hall, String phoneno, String position, String dob,String Password) {
+    public Users(String id, String name, String hallid, String hall, String phoneno, String position, String dob,String Password,String Roll) {
         this.id = id;
         this.name = name;
         this.hallid = hallid;
@@ -24,6 +25,11 @@ public class Users {
         this.position = position;
         this.dob = dob;
         this.password=Password;
+        this.roll=roll;
+    }
+
+    public String getRoll() {
+        return roll;
     }
 
     public String getId() {
