@@ -25,7 +25,10 @@
             android:name=".StudentProfile"
             android:label="Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity   android:name=".OfficeProfile"
+                    android:label="Dashboard"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" ></activity>
     </application>
 
 </manifest>
