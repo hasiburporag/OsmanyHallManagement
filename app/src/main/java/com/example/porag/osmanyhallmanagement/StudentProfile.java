@@ -115,6 +115,7 @@ public class StudentProfile extends AppCompatActivity {
                                             String currentDateandTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
                                             GoingOutHistory New=new GoingOutHistory(karon,kothai,currentDateandTime,session.getusename());
                                             ref.child(session.getusename()+currentDateandTime).setValue(New);
+                                            pw.dismiss();
                                             Toast.makeText(getApplicationContext(),"Successfull",Toast.LENGTH_LONG).show();
                                         }
                                     });
