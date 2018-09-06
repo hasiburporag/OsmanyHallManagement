@@ -49,13 +49,13 @@
                             android:layout_height="57dp"
 
                             android:padding="10dp"
-                            android:src="@drawable/money" />
+                            android:src="@drawable/count" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Bills"
+                            android:text="Count"
                             android:textStyle="bold" />
 
                         <View
@@ -69,7 +69,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="See Bill Details"
+                            android:text="Count Total Mess"
                             android:textColor="@android:color/darker_gray" />
 
                     </LinearLayout>
@@ -94,13 +94,13 @@
                             android:layout_width="65dp"
                             android:layout_height="57dp"
                             android:padding="10dp"
-                            android:src="@drawable/notice" />
+                            android:src="@drawable/calculator" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Publish Notice"
+                            android:text="Add Bill"
                             android:textStyle="bold" />
 
                         <View
@@ -114,7 +114,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Notice For Students"
+                            android:text="Add Each Bill"
                             android:textColor="@android:color/darker_gray" />
 
                     </LinearLayout>
@@ -149,13 +149,13 @@
                             android:layout_width="65dp"
                             android:layout_height="57dp"
                             android:padding="10dp"
-                            android:src="@drawable/report" />
+                            android:src="@drawable/complaint" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Application"
+                            android:text="Complaint"
                             android:textStyle="bold" />
 
                         <View
@@ -169,7 +169,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Student's Applications"
+                            android:text="Check Complaint"
                             android:textColor="@android:color/darker_gray" />
 
                     </LinearLayout>
@@ -193,13 +193,13 @@
                             android:layout_width="65dp"
                             android:layout_height="57dp"
                             android:padding="10dp"
-                            android:src="@drawable/sregister" />
+                            android:src="@drawable/clipboards" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:text="Register"
+                            android:text="Check"
                             android:textStyle="bold" />
 
                         <View
@@ -213,7 +213,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:padding="5dp"
-                            android:text="Register A Student"
+                            android:text="Check Mess"
                             android:textColor="@android:color/darker_gray" />
 
                     </LinearLayout>
@@ -221,67 +221,9 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="172dp"
-                android:layout_weight="1"
-                android:clipToPadding="false"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_margin="10dp"
-                    android:clickable="true"
-                    android:foreground="?android:attr/selectableItemBackground">
-
-                    <LinearLayout
-
-                        android:layout_width="163dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:background="#736767">
-
-                        <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="57dp"
-                            android:padding="10dp"
-                            android:src="@drawable/eregister" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Register"
-                            android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_margin="10dp"
-                            android:background="#636060" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="Register An Employee"
-                            android:textColor="@android:color/darker_gray" />
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-
-
-            </LinearLayout>
 
 
         </LinearLayout>
-
 
 
 
