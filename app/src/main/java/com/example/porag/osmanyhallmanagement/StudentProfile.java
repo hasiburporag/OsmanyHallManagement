@@ -24,6 +24,13 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class StudentProfile extends AppCompatActivity {
 
     private DrawerLayout dl;
@@ -36,6 +43,7 @@ public class StudentProfile extends AppCompatActivity {
     Button submit,close;
     EditText reason,where1;
     ProgressDialog progressDialog;
+    DatabaseReference ref;
 
     CardView Gout;
 
@@ -96,13 +104,18 @@ public class StudentProfile extends AppCompatActivity {
                                     close=Custom.findViewById(R.id.close);
                                     reason=Custom.findViewById(R.id.input_reason);
                                     where1=Custom.findViewById(R.id.input_location);
+                                    ref= FirebaseDatabase.getInstance().getReference("GoingOutHistory");
 
                                     submit.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
+
                                             String karon=reason.getText().toString();
                                             String kothai=where1.getText().toString();
-                                            Toast.makeText(getApplicationContext(),karon+kothai,Toast.LENGTH_LONG).show();
+                                            String currentDateandTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+                                            GoingOutHistory New=new GoingOutHistory(karon,kothai,currentDateandTime,session.getusename());
+                                            ref.child(session.getusename()+currentDateandTime).setValue(New);
+                                            Toast.makeText(getApplicationContext(),"Successfull",Toast.LENGTH_LONG).show();
                                         }
                                     });
 
