@@ -31,9 +31,15 @@
             android:name=".OfficeProfile"
             android:label="Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".MessProfile" />
-        <activity android:name=".StuffProfile" />
-        <activity android:name=".RegisterStudent"></activity>
+        <activity
+            android:name=".MessStudent"
+            android:label="Mess"
+            android:parentActivityName=".StudentProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".BillPayStudent"
+            android:label="Payment"
+            android:parentActivityName=".StudentProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
     </application>
 
 </manifest>
