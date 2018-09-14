@@ -19,7 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="#736767"
-            android:scaleType="centerCrop">
+            android:scaleType="centerCrop"
+            android:orientation="horizontal">
 
         </LinearLayout>
 
@@ -120,14 +121,14 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:clickable="true"
-                    android:text="Student ID"
+                    android:text="Employee ID: "
                     android:textStyle="bold"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/studentid"
+                    android:id="@+id/employeeid"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_margin="5dp"
@@ -141,23 +142,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:clickable="true"
-                android:text="Department: "
-                android:textStyle="bold"
-                android:layout_marginLeft="8dp"
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:text="Name: "
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
 
-                android:layout_marginTop="8dp"
-               />
+                    android:layout_marginTop="8dp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/department"
+                    android:id="@+id/ename"
                     android:layout_marginLeft="8dp"
                     android:layout_margin="5dp"
                     android:layout_marginTop="8dp"
@@ -165,120 +166,123 @@
 
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:clickable="true"
-                android:text="Hall: "
-                android:textStyle="bold"
-                android:layout_marginLeft="8dp"
+                android:orientation="horizontal">
 
-                android:layout_marginTop="8dp"
-                />
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:text="Age: "
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
 
-            <TextView
-                android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/age"
+                    android:layout_marginLeft="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/hall"
-                android:layout_marginLeft="8dp"
-                android:layout_margin="5dp"
-                android:layout_marginTop="8dp"
-                android:textStyle="bold"/>
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:text="WrokPlace"
+                    android:textStyle="bold"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                    android:layout_marginLeft="8dp"
+                    />
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/workplace"
+                    android:layout_marginLeft="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
 
-                android:text="Date Of Birth: "
-                android:textStyle="bold"
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
 
-                android:layout_marginLeft="8dp"
-                />
+                    android:text="Joining Date: "
+                    android:textStyle="bold"
 
-            <TextView
-                android:layout_width="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/jdate"
+                    android:layout_marginLeft="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dob"
-                android:layout_marginLeft="8dp"
-                android:layout_margin="5dp"
-                android:layout_marginTop="8dp"
-                android:textStyle="bold"/>
+                android:orientation="horizontal">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:clickable="true"
+                    android:text="Mobile :"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mobile"
+                    android:layout_marginLeft="8dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:text="Mobile :"
-                android:textStyle="bold"
-                android:layout_marginLeft="8dp"
-                app:layout_constraintLeft_toLeftOf="parent" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/mobile"
-                android:layout_marginLeft="8dp"
-                android:layout_margin="5dp"
-                android:layout_marginTop="8dp"
-                android:textStyle="bold"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:text="Email: "
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView22"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/email"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_margin="5dp"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
 
         </LinearLayout>
     </RelativeLayout>
