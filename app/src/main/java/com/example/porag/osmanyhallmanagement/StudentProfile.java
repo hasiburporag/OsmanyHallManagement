@@ -45,7 +45,7 @@ public class StudentProfile extends AppCompatActivity {
     ProgressDialog progressDialog;
     DatabaseReference ref;
 
-    CardView Gout;
+    CardView Gout,mess,payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,8 @@ public class StudentProfile extends AppCompatActivity {
         progressDialog.setMessage("Logging Out");
         dl = (DrawerLayout) findViewById(R.id.activity_student_profile);
         Gout=findViewById(R.id.gout);
+        mess=findViewById(R.id.mess);
+        payment=findViewById(R.id.billing);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
         session=new SkipActivity(this);
         dl.addDrawerListener(t);
@@ -64,6 +66,22 @@ public class StudentProfile extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         nv = (NavigationView) findViewById(R.id.nv);
+
+        mess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent m=new Intent(getApplicationContext(),MessStudent.class);
+                startActivity(m);
+            }
+        });
+
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent m=new Intent(getApplicationContext(),BillPayStudent.class);
+                startActivity(m);
+            }
+        });
 
         Gout.setOnClickListener(new View.OnClickListener() {
             @Override
