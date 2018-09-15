@@ -36,8 +36,13 @@
             android:label="Mess"
             android:parentActivityName=".StudentProfile"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".BillPayStudent"
+        <activity
+            android:name=".BillPayStudent"
             android:label="Payment"
+            android:parentActivityName=".StudentProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".StudentReport"
+            android:label="Complaint"
             android:parentActivityName=".StudentProfile"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
     </application>
