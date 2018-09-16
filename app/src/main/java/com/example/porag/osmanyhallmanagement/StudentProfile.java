@@ -45,7 +45,7 @@ public class StudentProfile extends AppCompatActivity {
     ProgressDialog progressDialog;
     DatabaseReference ref;
 
-    CardView Gout,mess,payment;
+    CardView Gout,mess,payment,complaint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +58,7 @@ public class StudentProfile extends AppCompatActivity {
         Gout=findViewById(R.id.gout);
         mess=findViewById(R.id.mess);
         payment=findViewById(R.id.billing);
+        complaint=findViewById(R.id.report);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
         session=new SkipActivity(this);
         dl.addDrawerListener(t);
@@ -74,6 +75,15 @@ public class StudentProfile extends AppCompatActivity {
                 startActivity(m);
             }
         });
+
+        complaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent m=new Intent(getApplicationContext(),StudentReport.class);
+                startActivity(m);
+            }
+        });
+
 
         payment.setOnClickListener(new View.OnClickListener() {
             @Override
