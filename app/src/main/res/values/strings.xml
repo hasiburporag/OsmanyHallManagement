@@ -2,4 +2,13 @@
     <string name="app_name">Osmany Hall Management</string>
     <string name="Open">Open Navigation Drawer</string>
     <string name="Close">Close Navigation Drawer</string>
+    <string name="hint_gender">I am</string>
+    <string name="male">Male Wing(Osmany Hall)</string>
+    <string name="female">Female Wing(Osmany Hall)</string>
+    <string name="ext_a">Extention-A</string>
+    <string name="ext_b">Extention-B</string>
+    <string name="ext_c">Extention-C</string>
+    <string name="ext_d">Extention-D</string>
+    <string name="ext_e">Extention-E</string>
+    <string name="btn_sign_up">Sign Up !!</string>
 </resources>
