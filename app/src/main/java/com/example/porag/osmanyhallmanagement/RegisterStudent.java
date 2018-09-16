@@ -1,6 +1,7 @@
 package com.example.porag.osmanyhallmanagement;
 
 import android.content.Intent;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -83,7 +84,7 @@ public class RegisterStudent extends AppCompatActivity {
         String ssemail = email.getText().toString().trim();
         String id = databaseReference.push().getKey();
 
-        register reg = new register(ssname,ssdepertment,ssid,sshall,ssroom,ssphone,ssemail);
-        databaseReference.child(id).setValue(reg);
+     //   register reg = new register(ssname,ssdepertment,ssid,sshall,ssroom,ssphone,ssemail);
+      //  databaseReference.child(id).setValue(reg);
     }
 }

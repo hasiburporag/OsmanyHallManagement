@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#383737"
     tools:context=".StudentProfile"
-    android:id="@+id/activity_student_profile">
+    android:id="@+id/activity_office_profile">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,6 +14,7 @@
         android:background="#383737">
 
         <LinearLayout
+            android:id="@+id/parenlayout1"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="12dp"
             android:layout_width="match_parent"
@@ -296,7 +297,7 @@
         app:menu="@layout/navigation_menu"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        android:id="@+id/nv">
+        android:id="@+id/nv1">
 
     </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

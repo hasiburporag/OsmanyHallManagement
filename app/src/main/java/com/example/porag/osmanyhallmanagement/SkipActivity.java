@@ -19,8 +19,16 @@ public class SkipActivity {
         prefs.edit().putString("usename", usename).commit();
     }
 
+    public void settype(String type) {
+        prefs.edit().putString("type", type).commit();
+    }
+
     public String getusename() {
         String usename = prefs.getString("usename","");
+        return usename;
+    }
+    public String gettype() {
+        String usename = prefs.getString("type","");
         return usename;
     }
     public void clearAll()

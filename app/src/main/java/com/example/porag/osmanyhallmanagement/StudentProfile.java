@@ -51,12 +51,12 @@ public class StudentProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
-        progressDialog=new ProgressDialog(this);
+
+        Gout=findViewById(R.id.gout);
+        mess=findViewById(R.id.mess); progressDialog=new ProgressDialog(this);
         layout=findViewById(R.id.parenlayout);
         progressDialog.setMessage("Logging Out");
         dl = (DrawerLayout) findViewById(R.id.activity_student_profile);
-        Gout=findViewById(R.id.gout);
-        mess=findViewById(R.id.mess);
         payment=findViewById(R.id.billing);
         complaint=findViewById(R.id.report);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
