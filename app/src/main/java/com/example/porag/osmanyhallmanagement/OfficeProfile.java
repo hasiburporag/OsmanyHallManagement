@@ -22,7 +22,7 @@ public class OfficeProfile extends AppCompatActivity {
     private NavigationView nv;
     private LinearLayout layout;
     private SkipActivity session;
-    private CardView notice;
+    private CardView notice,registerStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,14 @@ public class OfficeProfile extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         nv = (NavigationView) findViewById(R.id.nv1);
         notice=findViewById(R.id.notice);
+        registerStudent=findViewById(R.id.registerStudent);
+        registerStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),RegisterStudent.class);
+                startActivity(i);
+            }
+        });
         notice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,39 +1,36 @@
 package com.example.porag.osmanyhallmanagement;
 
+
 public class Users {
-    String id;
     String name;
     String hallid;
     String hall;
     String phoneno;
-    String position;
+    String department;
+    String email;
     String dob;
-    String password;
     String roll;
+    String room;
+    String picture;
 
-    public Users()
-    {
-
+    public Users() {
     }
 
-    public Users(String id, String name, String hallid, String hall, String phoneno, String position, String dob,String Password,String Roll) {
-        this.id = id;
+    public Users(String name, String hallid, String hall, String phoneno, String department, String email, String dob, String roll, String room, String picture) {
         this.name = name;
         this.hallid = hallid;
         this.hall = hall;
         this.phoneno = phoneno;
-        this.position = position;
+        this.department = department;
+        this.email = email;
         this.dob = dob;
-        this.password=Password;
-        this.roll=roll;
+        this.roll = roll;
+        this.room = room;
+        this.picture = picture;
     }
 
-    public String getRoll() {
-        return roll;
-    }
-
-    public String getId() {
-        return id;
+    public String getPicture() {
+        return picture;
     }
 
     public String getName() {
@@ -52,16 +49,23 @@ public class Users {
         return phoneno;
     }
 
-    public String getPosition() {
-        return position;
+    public String getDepartment() {
+        return department;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
     public String getDob() {
-
         return dob;
+    }
+
+    public String getRoll() {
+        return roll;
+    }
+
+    public String getRoom() {
+        return room;
     }
 }
