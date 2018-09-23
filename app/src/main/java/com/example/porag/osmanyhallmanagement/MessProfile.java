@@ -21,7 +21,7 @@ public class MessProfile extends AppCompatActivity {
     private NavigationView nv;
     private LinearLayout layout;
     private SkipActivity session;
-    private CardView check;
+    private CardView check,messcount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,14 @@ public class MessProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),CheckMess.class);
+                startActivity(i);
+            }
+        });
+        messcount=findViewById(R.id.messcount);
+        messcount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),MessCount.class);
                 startActivity(i);
             }
         });

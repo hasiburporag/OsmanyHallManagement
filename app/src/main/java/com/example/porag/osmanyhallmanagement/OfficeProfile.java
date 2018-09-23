@@ -22,7 +22,7 @@ public class OfficeProfile extends AppCompatActivity {
     private NavigationView nv;
     private LinearLayout layout;
     private SkipActivity session;
-    private CardView notice,registerStudent;
+    private CardView notice,registerStudent,applications;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,15 @@ public class OfficeProfile extends AppCompatActivity {
         nv = (NavigationView) findViewById(R.id.nv1);
         notice=findViewById(R.id.notice);
         registerStudent=findViewById(R.id.registerStudent);
+        applications=findViewById(R.id.applications);
+        applications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),OfficeApplications.class);
+                startActivity(i);
+
+            }
+        });
         registerStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
