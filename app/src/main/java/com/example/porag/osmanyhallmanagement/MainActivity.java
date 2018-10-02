@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Button LogIn,sig;
     Query usrqry;
     String userid,password;
-    Users user;
+    UserType user;
     private SkipActivity session;
     ProgressDialog progressDialog;
 
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // Intent demo=new Intent(getApplicationContext(),SignUp.class);
-       // startActivity(demo);
+       /// Intent demo=new Intent(getApplicationContext(),SignUp.class);
+       /// startActivity(demo);
         UserID=findViewById(R.id.input_email);
         Password=findViewById(R.id.input_password);
         LogIn=findViewById(R.id.btn_login);
@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.setMessage("Logging In");
         db=FirebaseDatabase.getInstance();
         myref=db.getReference();
-        users=myref.child("Users");
-        if(!session.getusename().isEmpty())
-        {
-            updateUI();
-        }
+        users=myref.child("UserType");
+       if(!session.getusename().isEmpty())
+     {
+         updateUI(session.gettype());
+     }
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
-                            user = singleSnapshot.getValue(Users.class);
+                            user = singleSnapshot.getValue(UserType.class);
                         }
                         if(user==null)
                         {
@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                             if(user.getPassword().compareTo(password)==0)
                             {
                                 session.setusename(userid);
-                                updateUI();
+                                session.settype(user.getType());
+                                updateUI(user.getType());
                             }
                             else
                             {
@@ -102,11 +103,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void updateUI() {
+    void updateUI(String type) {
         progressDialog.dismiss();
-       // Toast.makeText(getApplicationContext(),"Successfull Login",Toast.LENGTH_LONG).show();
-        Intent i=new Intent(getApplicationContext(),StudentProfile.class);
-        startActivity(i);
+     //  Toast.makeText(getApplicationContext(),"Successfull Login"+ type,Toast.LENGTH_LONG).show();
+        if(type.compareTo("Student")==0) {
+            Intent i = new Intent(getApplicationContext(), StudentProfile.class);
+            startActivity(i);
+        }
+        if(type.compareTo("Office")==0)
+        {
+            Intent i = new Intent(getApplicationContext(), OfficeProfile.class);
+            startActivity(i);
+        }
+        if(type.compareTo("Mess")==0)
+        {
+            Intent i = new Intent(getApplicationContext(), MessProfile.class);
+            startActivity(i);
+        }
+
 
     }
 

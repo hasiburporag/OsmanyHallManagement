@@ -14,9 +14,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Profile extends AppCompatActivity {
 
     TextView name,hallid,Hall1,Hall2,studentid,dept,mobile,email,dob;
+    CircleImageView img;
     FirebaseDatabase db;
     DatabaseReference ref,myref;
     Query query;
@@ -34,6 +37,7 @@ public class Profile extends AppCompatActivity {
         progressDialog.show();
         name=findViewById(R.id.name);
         hallid=findViewById(R.id.designation);
+        img=findViewById(R.id.profile_pic);
         Hall1=findViewById(R.id.location);
         Hall2=findViewById(R.id.hall);
         studentid=findViewById(R.id.studentid);
@@ -50,7 +54,7 @@ public class Profile extends AppCompatActivity {
 
        // user=new Users();
 
-        query=myref.orderByChild("id").equalTo(username);
+        query=myref.orderByKey().equalTo(username);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -65,9 +69,9 @@ public class Profile extends AppCompatActivity {
                 hallid.setText(user.getHallid());
                 Hall2.setText(user.getHall());
                 Hall1.setText(user.getHall());
-                dept.setText("CSE-16");
+                dept.setText(user.getDepartment());
                 mobile.setText(user.getPhoneno());
-                email.setText(user.getPosition());
+              email.setText(user.getEmail());
                 dob.setText(user.getDob());
                 studentid.setText(user.getRoll());
             }

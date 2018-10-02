@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.porag.osmanyhallmanagement">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    5
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,8 +29,13 @@
             android:label="Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity android:name=".Profile" />
+        <activity android:name=".SignUp" />
         <activity
             android:name=".OfficeProfile"
+            android:label="Dashboard"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".MessProfile"
             android:label="Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
@@ -41,9 +48,40 @@
             android:label="Payment"
             android:parentActivityName=".StudentProfile"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".StudentReport"
+        <activity
+            android:name=".StudentReport"
             android:label="Complaint"
             android:parentActivityName=".StudentProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".RegisterStudent"
+            android:label="Register"
+            android:parentActivityName=".StudentProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".PublishNotice"
+            android:label="Notice"
+            android:parentActivityName=".OfficeProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".CheckMess"
+            android:label="Check Mess"
+            android:parentActivityName=".MessProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".MessCount"
+            android:label="Mess Count"
+            android:parentActivityName=".MessProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".OfficeApplications"
+            android:label="Applications"
+            android:parentActivityName=".OfficeProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".OfficeApplicationDetails" />
+        <activity android:name=".MessComplaints"
+            android:label="Complaints"
+            android:parentActivityName=".MessProfile"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
     </application>
 
