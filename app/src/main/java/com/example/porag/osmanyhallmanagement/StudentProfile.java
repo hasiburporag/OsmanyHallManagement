@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -51,7 +52,10 @@ public class StudentProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
+        getApplicationContext().startService(new Intent(getApplicationContext(), com.example.porag.osmanyhallmanagement.Notification.class));
 
+        // getApplicationContext().startService(new Intent(getApplicationContext(),NoticeService.class));
         Gout=findViewById(R.id.gout);
         mess=findViewById(R.id.mess); progressDialog=new ProgressDialog(this);
         layout=findViewById(R.id.parenlayout);

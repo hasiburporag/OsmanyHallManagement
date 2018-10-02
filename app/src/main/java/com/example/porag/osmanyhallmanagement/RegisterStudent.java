@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -48,6 +49,7 @@ public class RegisterStudent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_student);
         setupUIView();
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         ref=FirebaseDatabase.getInstance().getReference("UserType");
         refMess=FirebaseDatabase.getInstance().getReference("Mess");

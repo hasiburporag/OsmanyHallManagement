@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,7 @@ public class MessComplaints extends AppCompatActivity {
         listapp=findViewById(R.id.listviewM);
         complaints=new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("Complaint");
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
         Query qry=ref.orderByChild("type").equalTo("Mess Complaint");
         qry.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

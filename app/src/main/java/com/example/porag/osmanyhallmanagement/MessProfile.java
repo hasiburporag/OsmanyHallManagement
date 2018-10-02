@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class MessProfile extends AppCompatActivity {
 
     private DrawerLayout dl;
@@ -29,6 +31,9 @@ public class MessProfile extends AppCompatActivity {
         setContentView(R.layout.activity_mess_profile);
         session=new SkipActivity(this);
         layout=findViewById(R.id.parenlayout2);
+        getApplicationContext().startService(new Intent(getApplicationContext(), com.example.porag.osmanyhallmanagement.Notification.class));
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
+        // getApplicationContext().startService(new Intent(getApplicationContext(),NoticeService.class));
         dl = (DrawerLayout) findViewById(R.id.activity_mess_profile);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
         dl.addDrawerListener(t);

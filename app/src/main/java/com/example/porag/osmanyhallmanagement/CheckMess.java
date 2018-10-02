@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class CheckMess extends AppCompatActivity {
     private TextView lunch,breakfast,dinner,name;
@@ -37,6 +38,7 @@ public class CheckMess extends AppCompatActivity {
         dinner=findViewById(R.id.st_dinner);
         name=findViewById(R.id.st_name);
         ref1= FirebaseDatabase.getInstance().getReference().child("Users");
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
 
 
         check.setOnClickListener(new View.OnClickListener() {

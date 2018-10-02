@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,6 +34,7 @@ public class StudentReport extends AppCompatActivity {
         setContentView(R.layout.activity_student_report);
         type=findViewById(R.id.typereport);
         detail_complaint=findViewById(R.id.detail_complaint);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
         submit=findViewById(R.id.report_submit);
         session=new SkipActivity(this);
         type.setOnItemSelectedListener(new CustomListener());

@@ -3,7 +3,11 @@
     package="com.example.porag.osmanyhallmanagement">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    5
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,66 +27,158 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
 
         <activity
             android:name=".StudentProfile"
             android:label="Dashboard"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".Profile" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Profile">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SignUp" />
         <activity
             android:name=".OfficeProfile"
             android:label="Dashboard"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter android:label="label">
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <data
+                    android:host="www.example.com"
+                    android:pathPrefix="/gizmos"
+                    android:scheme="http" />
+                <!-- note that the leading "/" is required for pathPrefix -->
+            </intent-filter>
+            <intent-filter android:label="filter">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <data
+                    android:host="gizmos"
+                    android:scheme="example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MessProfile"
             android:label="Dashboard"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MessStudent"
             android:label="Mess"
             android:parentActivityName=".StudentProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".BillPayStudent"
             android:label="Payment"
             android:parentActivityName=".StudentProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".StudentReport"
             android:label="Complaint"
             android:parentActivityName=".StudentProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".RegisterStudent"
             android:label="Register"
             android:parentActivityName=".StudentProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".PublishNotice"
             android:label="Notice"
             android:parentActivityName=".OfficeProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".CheckMess"
             android:label="Check Mess"
             android:parentActivityName=".MessProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MessCount"
             android:label="Mess Count"
             android:parentActivityName=".MessProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".OfficeApplications"
             android:label="Applications"
             android:parentActivityName=".OfficeProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity android:name=".OfficeApplicationDetails" />
-        <activity android:name=".MessComplaints"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OfficeApplicationDetails">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MessComplaints"
             android:label="Complaints"
             android:parentActivityName=".MessProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Notification">
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+
+        </service>
     </application>
 
 </manifest>

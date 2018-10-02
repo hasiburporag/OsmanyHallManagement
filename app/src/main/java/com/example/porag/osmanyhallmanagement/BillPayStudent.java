@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class BillPayStudent extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill_pay_student);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
     }
 
     @Override

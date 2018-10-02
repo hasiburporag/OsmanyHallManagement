@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class OfficeApplicationDetails extends AppCompatActivity {
     DatabaseReference ref;
@@ -28,6 +29,7 @@ public class OfficeApplicationDetails extends AppCompatActivity {
         date=findViewById(R.id.datear);
         Intent i = getIntent();
         Complaint selected = (Complaint) i.getSerializableExtra("sampleObject");
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
 
         ref= FirebaseDatabase.getInstance().getReference().child("Users");
         Query qry=ref.orderByKey().equalTo(selected.getStudent());

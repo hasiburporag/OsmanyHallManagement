@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MessStudent extends AppCompatActivity {
     Switch breakfast,lunch,dinner;
@@ -29,6 +30,7 @@ public class MessStudent extends AppCompatActivity {
         lunch=findViewById(R.id.lunch);
         dinner=findViewById(R.id.dinner);
         session=new SkipActivity(this);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
 
         dbref= FirebaseDatabase.getInstance().getReference().child("Mess");
         Query qry=dbref.orderByKey().equalTo(session.getusename());

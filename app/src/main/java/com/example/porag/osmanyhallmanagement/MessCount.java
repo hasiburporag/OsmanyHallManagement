@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MessCount extends AppCompatActivity {
 
@@ -35,6 +36,7 @@ public class MessCount extends AppCompatActivity {
         count=findViewById(R.id.count);
         meals=findViewById(R.id.meals);
         ref= FirebaseDatabase.getInstance().getReference("Mess");
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
 
         count.setOnClickListener(new View.OnClickListener() {
             @Override

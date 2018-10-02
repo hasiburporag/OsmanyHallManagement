@@ -37,6 +37,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/notice_publish"
                 android:hint="Write the Notice here"
                 android:inputType="textMultiLine"
                 android:lines="8"
@@ -50,6 +51,7 @@
 
 
             <Button
+                android:id="@+id/notice_submit"
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

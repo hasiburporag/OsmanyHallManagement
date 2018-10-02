@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -42,6 +43,7 @@ public class Profile extends AppCompatActivity {
         Hall2=findViewById(R.id.hall);
         studentid=findViewById(R.id.studentid);
         dept=findViewById(R.id.department);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
         mobile=findViewById(R.id.mobile);
         email=findViewById(R.id.email);
         dob=findViewById(R.id.dob);

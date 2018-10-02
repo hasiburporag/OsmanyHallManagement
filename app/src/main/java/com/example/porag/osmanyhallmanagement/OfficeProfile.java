@@ -1,9 +1,16 @@
 package com.example.porag.osmanyhallmanagement;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +22,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.util.Calendar;
+
 public class OfficeProfile extends AppCompatActivity {
 
     private DrawerLayout dl;
@@ -22,12 +33,14 @@ public class OfficeProfile extends AppCompatActivity {
     private NavigationView nv;
     private LinearLayout layout;
     private SkipActivity session;
-    private CardView notice,registerStudent,applications;
+    private CardView notice,registerStudent,applications,emp_reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_office_profile);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notices");
+         getApplicationContext().startService(new Intent(getApplicationContext(), com.example.porag.osmanyhallmanagement.Notification.class));
         session=new SkipActivity(this);
         layout=findViewById(R.id.parenlayout1);
         dl = (DrawerLayout) findViewById(R.id.activity_office_profile);
@@ -59,6 +72,16 @@ public class OfficeProfile extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),PublishNotice.class);
                 startActivity(i);
+            }
+        });
+        emp_reg=findViewById(R.id.emp_reg);
+        emp_reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
             }
         });
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
