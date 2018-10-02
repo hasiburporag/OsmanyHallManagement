@@ -79,10 +79,12 @@
             android:parentActivityName=".OfficeProfile"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity android:name=".OfficeApplicationDetails" />
-        <activity android:name=".MessComplaints"
+        <activity
+            android:name=".MessComplaints"
             android:label="Complaints"
             android:parentActivityName=".MessProfile"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity android:name=".StuffRegister"></activity>
     </application>
 
 </manifest>
