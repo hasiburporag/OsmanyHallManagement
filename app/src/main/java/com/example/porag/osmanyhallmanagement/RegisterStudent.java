@@ -155,6 +155,7 @@ public class RegisterStudent extends AppCompatActivity {
     }
 
     public void regStudent(String shall){
+
         String ssname = name.getText().toString();
         String ssdepertment = depertment.getText().toString();
         String ssid = studentid.getText().toString();
@@ -185,13 +186,12 @@ public class RegisterStudent extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),exception.getMessage(),Toast.LENGTH_LONG).show();
                     }
                 });
-
-        Users newStudent=new Users(ssname,sshall,shall,ssphone,ssdepertment,ssemail,sdob,ssid,ssroom,downloadUrl1);
-       UserType newType=new UserType("Student-"+ssid+"-"+sshall,"123456","Student");
-       MessManage newMess=new MessManage("Student-"+ssid+"-"+sshall,false,false,false);
-       databaseReference.child("Student-"+ssid+"-"+sshall).setValue(newStudent);
-       ref.child("Student-"+ssid+"-"+sshall).setValue(newType);
-       refMess.child("Student-"+ssid+"-"+sshall).setValue(newMess);
+         Users newStudent=new Users(ssname,sshall,shall,ssphone,ssdepertment,ssemail,sdob,ssid,ssroom,downloadUrl1);
+         UserType newType=new UserType("Student-"+ssid+"-"+sshall,"123456","Student");
+         MessManage newMess=new MessManage("Student-"+ssid+"-"+sshall,false,false,false);
+         databaseReference.child("Student-"+ssid+"-"+sshall).setValue(newStudent);
+         ref.child("Student-"+ssid+"-"+sshall).setValue(newType);
+         refMess.child("Student-"+ssid+"-"+sshall).setValue(newMess);
 
 
     }

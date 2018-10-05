@@ -161,6 +161,16 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </activity>
+        <activity android:name=".StuffProfile">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StuffRegister">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MessComplaints"
             android:label="Complaints"

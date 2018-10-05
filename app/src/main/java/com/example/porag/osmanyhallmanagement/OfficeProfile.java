@@ -78,10 +78,8 @@ public class OfficeProfile extends AppCompatActivity {
         emp_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
-
+                Intent i=new Intent(getApplicationContext(),StuffRegister.class);
+                startActivity(i);
             }
         });
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -90,8 +88,8 @@ public class OfficeProfile extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.profile:
-                       // Intent profile=new Intent(getApplicationContext(),Profile.class);
-                       // startActivity(profile);
+                       Intent profile=new Intent(getApplicationContext(),StuffProfile.class);
+                       startActivity(profile);
                         break;
                     case R.id.notifications:
                         Toast.makeText(OfficeProfile.this, "Notifications", Toast.LENGTH_SHORT).show();

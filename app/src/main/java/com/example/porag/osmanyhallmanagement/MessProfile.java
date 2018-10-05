@@ -70,8 +70,8 @@ public class MessProfile extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.profile:
-                        // Intent profile=new Intent(getApplicationContext(),Profile.class);
-                        // startActivity(profile);
+                        Intent profile=new Intent(getApplicationContext(),StuffProfile.class);
+                        startActivity(profile);
                         break;
                     case R.id.notifications:
                         Toast.makeText(MessProfile.this, "Notifications", Toast.LENGTH_SHORT).show();

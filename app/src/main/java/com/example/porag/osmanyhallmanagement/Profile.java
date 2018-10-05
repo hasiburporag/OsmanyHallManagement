@@ -73,7 +73,7 @@ public class Profile extends AppCompatActivity {
                 Hall1.setText(user.getHall());
                 dept.setText(user.getDepartment());
                 mobile.setText(user.getPhoneno());
-              email.setText(user.getEmail());
+                email.setText(user.getEmail());
                 dob.setText(user.getDob());
                 studentid.setText(user.getRoll());
                 img.setImageURI(user.getPicture());
