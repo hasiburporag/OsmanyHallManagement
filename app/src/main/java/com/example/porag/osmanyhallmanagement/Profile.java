@@ -76,6 +76,8 @@ public class Profile extends AppCompatActivity {
               email.setText(user.getEmail());
                 dob.setText(user.getDob());
                 studentid.setText(user.getRoll());
+                img.setImageURI(user.getPicture());
+
             }
 
             @Override

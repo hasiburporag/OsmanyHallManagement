@@ -11,6 +11,8 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -63,7 +65,10 @@ public class Notification extends FirebaseMessagingService {
             PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             mBuilder.setContentIntent(pi);
             mNotificationManager.notify(0, mBuilder.build());
-
+            NotificationsUser notun=new NotificationsUser(remoteMessage.getNotification().getBody());
+            DatabaseReference dr=FirebaseDatabase.getInstance().getReference("Notifications");
+            SkipActivity session=new SkipActivity(this);
+            dr.child(session.getusename()).push().setValue(notun);
         }
     }
 

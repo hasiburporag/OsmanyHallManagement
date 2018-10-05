@@ -40,7 +40,7 @@ public class RegisterStudent extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
     private StorageReference stref;
     String picturePath,downloadUrl;
-    Uri selectedImage;
+    Uri selectedImage,downloadUrl1;
 
 
 
@@ -172,7 +172,7 @@ public class RegisterStudent extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
-                        Uri downloadUrl1 = taskSnapshot.getDownloadUrl();
+                        downloadUrl1 = taskSnapshot.getDownloadUrl();
                         downloadUrl=downloadUrl1.toString();
                         //  Toast.makeText(getApplicationContext(),"d",Toast.LENGTH_LONG).show();
                     }
@@ -186,7 +186,7 @@ public class RegisterStudent extends AppCompatActivity {
                     }
                 });
 
-        Users newStudent=new Users(ssname,sshall,shall,ssphone,ssdepertment,ssemail,sdob,ssid,ssroom,downloadUrl);
+        Users newStudent=new Users(ssname,sshall,shall,ssphone,ssdepertment,ssemail,sdob,ssid,ssroom,downloadUrl1);
        UserType newType=new UserType("Student-"+ssid+"-"+sshall,"123456","Student");
        MessManage newMess=new MessManage("Student-"+ssid+"-"+sshall,false,false,false);
        databaseReference.child("Student-"+ssid+"-"+sshall).setValue(newStudent);

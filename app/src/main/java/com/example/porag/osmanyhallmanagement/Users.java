@@ -1,6 +1,8 @@
 package com.example.porag.osmanyhallmanagement;
 
 
+import android.net.Uri;
+
 public class Users {
     String name;
     String hallid;
@@ -11,12 +13,12 @@ public class Users {
     String dob;
     String roll;
     String room;
-    String picture;
+    Uri picture;
 
     public Users() {
     }
 
-    public Users(String name, String hallid, String hall, String phoneno, String department, String email, String dob, String roll, String room, String picture) {
+    public Users(String name, String hallid, String hall, String phoneno, String department, String email, String dob, String roll, String room, Uri picture) {
         this.name = name;
         this.hallid = hallid;
         this.hall = hall;
@@ -29,7 +31,7 @@ public class Users {
         this.picture = picture;
     }
 
-    public String getPicture() {
+    public Uri getPicture() {
         return picture;
     }
 

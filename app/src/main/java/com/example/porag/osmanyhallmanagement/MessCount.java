@@ -67,6 +67,7 @@ public class MessCount extends AppCompatActivity {
                             a++;
                         }
                         cnt.setText(Integer.toString(a));
+                        a=0;
                     }
 
 
