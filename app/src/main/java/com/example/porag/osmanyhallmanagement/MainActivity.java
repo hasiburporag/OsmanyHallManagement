@@ -120,7 +120,11 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), MessProfile.class);
             startActivity(i);
         }
-
+        if(type.compareTo("Guard")==0)
+        {
+            Intent i = new Intent(getApplicationContext(), GuardActivity.class);
+            startActivity(i);
+        }
 
     }
 

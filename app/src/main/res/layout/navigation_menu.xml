@@ -8,6 +8,9 @@
         android:icon="@drawable/user"
         android:title="Profile"
         />
+    <item android:id="@+id/changepass"
+        android:icon="@drawable/notification"
+        android:title="Change Password"/>
     <item android:id="@+id/notifications"
         android:icon="@drawable/notification"
         android:title="Notifications"/>

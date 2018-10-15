@@ -77,7 +77,7 @@ public class RegisterStudent extends AppCompatActivity {
                     int id=grp.getCheckedRadioButtonId();
                     selected=findViewById(id);
                     regStudent(selected.getText().toString());
-                    Toast.makeText(getApplicationContext(),"Sucessfull",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Sucesfull",Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(RegisterStudent.this,RegisterStudent.class);
                     startActivity(intent);
                     finish();

@@ -3,13 +3,13 @@ package com.example.porag.osmanyhallmanagement;
 public class GoingOutHistory {
     String reason;
     String location;
-    String DateTime;
+    String timing;
     String id;
 
     public GoingOutHistory(String reason, String location, String dateTime,String id) {
         this.reason = reason;
         this.location = location;
-        this.DateTime = dateTime;
+        this.timing = dateTime;
         this.id=id;
     }
 
@@ -28,7 +28,7 @@ public class GoingOutHistory {
         return id;
     }
 
-    public String getDateTime() {
-        return DateTime;
+    public String getTiming() {
+        return timing;
     }
 }
