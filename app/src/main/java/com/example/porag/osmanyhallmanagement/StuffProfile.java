@@ -1,8 +1,11 @@
 package com.example.porag.osmanyhallmanagement;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,7 @@ public class StuffProfile extends AppCompatActivity {
     String username,a;
     Stuff stuff;
     ProgressDialog progressDialog;
+    ImageView edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class StuffProfile extends AppCompatActivity {
         progressDialog.setMessage("Loading..");
         progressDialog.show();
         FirebaseMessaging.getInstance().subscribeToTopic("Notices");
+        edit=findViewById(R.id.editStuff);
         setUpUIview();
         session=new SkipActivity(this);
         username=session.getusename();
@@ -75,6 +80,16 @@ public class StuffProfile extends AppCompatActivity {
         });
 
         progressDialog.dismiss();
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),EditProfile.class);
+                i.putExtra("stuff", stuff);
+                startActivity(i);
+            }
+        });
+
 
     }
 

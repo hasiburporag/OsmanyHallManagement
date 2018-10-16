@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 progressDialog.show();
-                userid=UserID.getText().toString();
-                password=Password.getText().toString();
+                userid=UserID.getText().toString().trim();
+                password=Password.getText().toString().trim();
                 usrqry=users.orderByChild("id").equalTo(userid);
 
                 usrqry.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
     void updateUI(String type) {
         progressDialog.dismiss();
      //  Toast.makeText(getApplicationContext(),"Successfull Login"+ type,Toast.LENGTH_LONG).show();
+
         if(type.compareTo("Student")==0) {
             Intent i = new Intent(getApplicationContext(), StudentProfile.class);
             startActivity(i);

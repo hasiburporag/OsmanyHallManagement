@@ -36,6 +36,7 @@ public class OfficeApplications extends AppCompatActivity {
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                complaints.clear();
                 for (DataSnapshot data: dataSnapshot.getChildren()) {
                     Complaint value = data.getValue(Complaint.class);
                     complaints.add(value);

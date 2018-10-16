@@ -53,7 +53,7 @@
 
 
             <ImageView
-                android:id="@+id/edit"
+                android:id="@+id/editStuff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

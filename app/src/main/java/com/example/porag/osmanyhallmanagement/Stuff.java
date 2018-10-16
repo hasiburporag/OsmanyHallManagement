@@ -1,6 +1,8 @@
 package com.example.porag.osmanyhallmanagement;
 
-public class Stuff {
+import java.io.Serializable;
+
+public class Stuff implements Serializable {
 
     private String name,employeeid,age,dob,joiningdate,phone,hall;
 

@@ -1,8 +1,12 @@
 package com.example.porag.osmanyhallmanagement;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +32,7 @@ public class Profile extends AppCompatActivity {
     String username,a;
     Users user;
     ProgressDialog progressDialog;
+    ImageView edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,7 @@ public class Profile extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
         progressDialog.setMessage("Loading..");
         progressDialog.show();
+        edit=findViewById(R.id.edit);
         name=findViewById(R.id.name);
         hallid=findViewById(R.id.designation);
         img=findViewById(R.id.profile_pic);
@@ -85,6 +91,15 @@ public class Profile extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
 
+            }
+        });
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),EditProfile.class);
+                i.putExtra("student", user);
+                startActivity(i);
             }
         });
 

@@ -3,7 +3,9 @@ package com.example.porag.osmanyhallmanagement;
 
 import android.net.Uri;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
     String name;
     String hallid;
     String hall;

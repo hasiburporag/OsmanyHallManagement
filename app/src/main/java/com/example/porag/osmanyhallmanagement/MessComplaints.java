@@ -37,6 +37,7 @@ public class MessComplaints extends AppCompatActivity {
         qry.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                complaints.clear();
                 for (DataSnapshot data: dataSnapshot.getChildren()) {
                     Complaint value = data.getValue(Complaint.class);
                     complaints.add(value);
@@ -44,6 +45,7 @@ public class MessComplaints extends AppCompatActivity {
                 Adapter = new ItemComplaintAdapter(MessComplaints.this,
                         complaints);
                 listapp.setAdapter(Adapter);
+
             }
 
             @Override
