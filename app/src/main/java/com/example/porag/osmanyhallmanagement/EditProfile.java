@@ -50,6 +50,8 @@ public class EditProfile extends AppCompatActivity {
             name.setHint(stufff.getName());
             mobile.setHint(stufff.getPhone());
 
+            //New
+
 
         }
 
