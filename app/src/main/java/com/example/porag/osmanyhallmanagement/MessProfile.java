@@ -76,6 +76,9 @@ public class MessProfile extends AppCompatActivity {
                     case R.id.notifications:
                         Toast.makeText(MessProfile.this, "Notifications", Toast.LENGTH_SHORT).show();
                         break;
+                    case R.id.changepass:
+                        Toast.makeText(getApplicationContext(), "Change", Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.Sign_Out:
 
                         session.clearAll();

@@ -183,6 +183,9 @@ public class StudentProfile extends AppCompatActivity {
                     case R.id.notifications:
                         Toast.makeText(StudentProfile.this, "Notifications", Toast.LENGTH_SHORT).show();
                         break;
+                    case R.id.changepass:
+                        Toast.makeText(StudentProfile.this, "Change", Toast.LENGTH_SHORT).show();
+                        break;
                     case R.id.Sign_Out:
                         progressDialog.show();
                         session.clearAll();
