@@ -19,11 +19,13 @@ import com.google.firebase.messaging.RemoteMessage;
 import static android.support.constraint.Constraints.TAG;
 
 public class Notification extends FirebaseMessagingService {
+    SkipActivity session;
     public Notification() {
     }
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
+        session=new SkipActivity(this);
 
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ

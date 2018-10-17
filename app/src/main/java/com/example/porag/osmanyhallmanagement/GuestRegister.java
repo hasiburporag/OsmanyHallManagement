@@ -86,8 +86,8 @@ public class GuestRegister extends AppCompatActivity {
         String currentDateandTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
 
-
-        InsertGuest reg = new InsertGuest(gname,ginfo,groom,gphone,guest_type,currentDateandTime);
-        databaseReference.push().setValue(reg);
+        String key=new StringBuilder().append(gname).append(currentDateandTime).toString();
+        InsertGuest reg = new InsertGuest(key,gname,ginfo,groom,gphone,guest_type,currentDateandTime,0,"Decline");
+        databaseReference.child(key).setValue(reg);
     }
 }

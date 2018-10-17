@@ -42,6 +42,14 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PasswordChangeFirst"
+            android:label="Password Insecure"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Profile">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -114,7 +122,15 @@
         <activity
             android:name=".RegisterStudent"
             android:label="Register"
-            android:parentActivityName=".StudentProfile"
+            android:parentActivityName=".OfficeProfile"
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".EditProfile"
+            android:label="Edit"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -192,7 +208,9 @@
             android:label="Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity android:name=".GuestRegister" />
-        <activity android:name=".GuardGoingOut"></activity>
+        <activity android:name=".GuardGoingOut" />
+        <activity android:name=".ChangePass" />
+        <activity android:name=".GuestApprove"></activity>
     </application>
 
 </manifest>

@@ -78,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 session.setusename(userid);
                                 session.settype(user.getType());
+                                Intent i=new Intent(getApplicationContext(),PasswordChangeFirst.class);
+                                if(password.equals("123456"))
+                                {
+                                    progressDialog.dismiss();
+                                    startActivity(i);
+                                }
                                 updateUI(user.getType());
                             }
                             else

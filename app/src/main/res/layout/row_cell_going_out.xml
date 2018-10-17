@@ -4,28 +4,64 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/idgoingout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"/>
 
-    <TextView
-        android:id="@+id/locationgoingout"
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/CardId"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/reasonegoingout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/timegoingout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/dategoingout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="110dp"
+        android:background="#736060"
+        android:layout_margin="10dp"
+
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="4"
+            android:background="#7360"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/crcimg"
+                android:layout_width="54dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                android:src="@drawable/user" />
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:padding="5dp">
+
+
+                <TextView
+
+                    android:layout_marginLeft="10dp"
+                    android:text="Dr. ABC"
+                    android:id="@+id/idgoingout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:text="Date:11/12/1990"
+                    android:id="@+id/locationgoingout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
 
 
 </LinearLayout>

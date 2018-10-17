@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class EditProfile extends AppCompatActivity {
 
@@ -14,10 +18,10 @@ public class EditProfile extends AppCompatActivity {
     LinearLayout maillayout;
     Button submit;
     Intent get;
-
+    String str,stremail,phone;
     Users student;
     Stuff stufff;
-
+    Button confirm;
     SkipActivity session;
 
     @Override
@@ -25,10 +29,10 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
         session=new SkipActivity(this);
-        name=findViewById(R.id.editName);
         mobile=findViewById(R.id.editMob);
         email=findViewById(R.id.editMail);
         maillayout=findViewById(R.id.mailLayout);
+        confirm=findViewById(R.id.confirmedit);
 
         get=getIntent();
 
@@ -37,7 +41,6 @@ public class EditProfile extends AppCompatActivity {
         if(session.gettype().compareTo("Student")==0)
         {
             student=(Users) get.getSerializableExtra("student");
-            name.setHint(student.getName());
             mobile.setHint(student.getPhoneno());
             email.setHint(student.getEmail());
 
@@ -47,13 +50,56 @@ public class EditProfile extends AppCompatActivity {
         {
             maillayout.setVisibility(View.GONE);
             stufff=(Stuff) get.getSerializableExtra("stuff");
-            name.setHint(stufff.getName());
             mobile.setHint(stufff.getPhone());
 
             //New
 
 
         }
+
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(session.gettype().compareTo("Student")==0)
+                {
+                   //e.getText().toString();
+                   stremail=email.getText().toString();
+                   phone=mobile.getText().toString();
+                   if(stremail.isEmpty())
+                   {
+                      stremail=student.getEmail();
+                   }
+                   if(phone.isEmpty())
+                   {
+                       phone=student.getPhoneno();
+                   }
+                   Users updated=new Users(student.getName(),student.getHallid(),student.getHall(),phone,student.getDepartment(),student.getEmail(),student.getDob(),student.getRoll(),student.getRoom(),student.getPicture());
+                    DatabaseReference dr=FirebaseDatabase.getInstance().getReference("Users");
+                    dr.child(session.getusename()).setValue(updated);
+                    Toast.makeText(getApplicationContext(),"Updated",Toast.LENGTH_SHORT).show();
+
+
+                }
+                else
+                {
+                    //str=name.getText().toString();
+                   // stremail=email.getText().toString();
+                    phone=mobile.getText().toString();
+                    if(phone.isEmpty())
+                    {
+                        phone=stufff.getPhone();
+                    }
+                    Stuff updated=new Stuff(stufff.getName(),stufff.getEmployeeid(),stufff.getAge(),stufff.getDob(),stufff.getJoiningdate(),phone,stufff.getHall());
+                    DatabaseReference dr=FirebaseDatabase.getInstance().getReference("Users");
+                    dr.child(session.getusename()).setValue(updated);
+                    Toast.makeText(getApplicationContext(),"Updated",Toast.LENGTH_SHORT).show();
+                    //New
+
+
+                }
+
+            }
+        });
 
 
 
