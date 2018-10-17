@@ -11,12 +11,7 @@
     <item android:id="@+id/changepass"
         android:icon="@drawable/notification"
         android:title="Change Password"/>
-    <item android:id="@+id/notifications"
-        android:icon="@drawable/notification"
-        android:title="Notifications"/>
-    <item android:id="@+id/contact"
-        android:icon="@drawable/contact"
-        android:title="Contact Us"/>
+
     <item android:id="@+id/Sign_Out"
         android:icon="@drawable/signout"
         android:title="Sign Out"/>

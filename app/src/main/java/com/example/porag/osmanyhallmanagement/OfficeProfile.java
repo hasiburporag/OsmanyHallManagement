@@ -7,6 +7,8 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -16,15 +18,22 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Calendar;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class OfficeProfile extends AppCompatActivity {
 
@@ -33,6 +42,7 @@ public class OfficeProfile extends AppCompatActivity {
     private NavigationView nv;
     private LinearLayout layout;
     private SkipActivity session;
+    CircleImageView imageView;
     private CardView notice,registerStudent,applications,emp_reg;
 
     @Override
@@ -82,6 +92,29 @@ public class OfficeProfile extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        View header=nv.getHeaderView(0);
+        final CircleImageView imageView=header.findViewById(R.id.header_pic);
+        StorageReference mImageRef =
+                FirebaseStorage.getInstance().getReference("Profile").child(session.getusename()+".jpg");
+        final long ONE_MEGABYTE = 1024 * 1024 *5;
+        mImageRef.getBytes(ONE_MEGABYTE)
+                .addOnSuccessListener(new OnSuccessListener<byte[]>() {
+                    @Override
+                    public void onSuccess(byte[] bytes) {
+                        Bitmap bm = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                        DisplayMetrics dm = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+                        imageView.setMinimumHeight(dm.heightPixels);
+                        imageView.setMinimumWidth(dm.widthPixels);
+                        imageView.setImageBitmap(bm);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -91,11 +124,11 @@ public class OfficeProfile extends AppCompatActivity {
                        Intent profile=new Intent(getApplicationContext(),StuffProfile.class);
                        startActivity(profile);
                         break;
-                    case R.id.notifications:
-                        Toast.makeText(OfficeProfile.this, "Notifications", Toast.LENGTH_SHORT).show();
-                        break;
+
                     case R.id.changepass:
-                        Toast.makeText(getApplicationContext(), "Change", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getApplicationContext(), "Change", Toast.LENGTH_SHORT).show();
+                        Intent i=new Intent(getApplicationContext(),ChangePass.class);
+                        startActivity(i);
                         break;
                     case R.id.Sign_Out:
 
@@ -103,9 +136,7 @@ public class OfficeProfile extends AppCompatActivity {
                         Intent logout=new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(logout);
                         break;
-                    case R.id.contact:
-                        Toast.makeText(OfficeProfile.this, "Contact Us", Toast.LENGTH_SHORT).show();
-                        break;
+
 
                     default:
 

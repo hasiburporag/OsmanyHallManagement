@@ -226,9 +226,7 @@ public class StudentProfile extends AppCompatActivity {
                         Intent profile=new Intent(getApplicationContext(),Profile.class);
                         startActivity(profile);
                         break;
-                    case R.id.notifications:
-                        Toast.makeText(StudentProfile.this, "Notifications", Toast.LENGTH_SHORT).show();
-                        break;
+
                     case R.id.changepass:
                         Intent i=new Intent(getApplicationContext(),ChangePass.class);
                         startActivity(i);
@@ -241,9 +239,7 @@ public class StudentProfile extends AppCompatActivity {
                         progressDialog.dismiss();
                         startActivity(logout);
                         break;
-                    case R.id.contact:
-                        Toast.makeText(StudentProfile.this, "Contact Us", Toast.LENGTH_SHORT).show();
-                        break;
+
 
                     default:
 
